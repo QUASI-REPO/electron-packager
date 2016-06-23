@@ -13,7 +13,6 @@ cache:
 - directories:
   - "$HOME/.npm"
   - "$HOME/.electron"
-  - /Library/Caches/Homebrew
 addons:
   apt:
     packages:
