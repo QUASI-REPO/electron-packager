@@ -6,11 +6,11 @@ const path = require('path')
 const series = require('run-series')
 
 function updateWineMissingException (err) {
-    if (err && err.code === 'ENOENT' && err.syscall === 'spawn wine') {
-        err.message = 'Could not find "wine" on your system.\n' +
-            'Wine is required to set icon and app metadata on the Electron app for Windows targets.\n' +
-            'See https://github.com/electron-userland/electron-packager#building-windows-apps-from-non-windows-platforms for details.'
-    }
+  if (err && err.code === 'ENOENT' && err.syscall === 'spawn wine') {
+    err.message = 'Could not find "wine" on your system.\n' +
+      'Wine is required to set icon and app metadata on the Electron app for Windows targets.\n' +
+      'See https://github.com/electron-userland/electron-packager#building-windows-apps-from-non-windows-platforms for details.'
+  }
 }
 
 module.exports = {
@@ -48,7 +48,7 @@ module.exports = {
             }
 
             require('rcedit')(newExePath, rcOpts, function (err) {
-                cb(updateWineMissingException(err))
+              cb(updateWineMissingException(err))
             })
           })
         })
