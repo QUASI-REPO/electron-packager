@@ -12,6 +12,8 @@ case "$TRAVIS_OS_NAME" in
     tar --strip-components=2 -xf *.tar.gz
     popd
     which wine
+    ## ensure that the wine config exists before the tests run
+    wine cmd /c echo wine is primed
     # Create CA
     openssl req -newkey rsa:4096 -days 1 -x509 -nodes -subj \
       "/C=CI/ST=Travis/L=Developer/O=Developer/CN=Developer CA" \
