@@ -11,6 +11,8 @@ function updateWineMissingException (err) {
       'Wine is required to set icon and app metadata on the Electron app for Windows targets.\n' +
       'See https://github.com/electron-userland/electron-packager#building-windows-apps-from-non-windows-platforms for details.'
   }
+
+  return err
 }
 
 module.exports = {
