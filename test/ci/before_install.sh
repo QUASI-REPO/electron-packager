@@ -4,12 +4,12 @@
 case "$TRAVIS_OS_NAME" in
   "osx")
     # Install Wine
-    mkdir wine
-    pushd wine
+    mkdir /tmp/osx-wine
+    pushd /tmp/osx-wine
     wget https://dl.winehq.org/wine-builds/macosx/i686/portable-winehq-devel-1.9.12-osx64.tar.gz
     tar --strip-components=2 -xf *.tar.gz
-    export PATH="$(pwd)/bin:$PATH"
     popd
+    which wine
     # Create CA
     openssl req -newkey rsa:4096 -days 1 -x509 -nodes -subj \
       "/C=CI/ST=Travis/L=Developer/O=Developer/CN=Developer CA" \
