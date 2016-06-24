@@ -61,5 +61,6 @@ module.exports = {
         common.moveApp(opts, tempPath, callback)
       })
     })
-  }
+  },
+  updateWineMissingException: updateWineMissingException
 }
